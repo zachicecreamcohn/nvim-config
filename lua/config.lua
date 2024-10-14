@@ -25,11 +25,12 @@ vim.api.nvim_set_keymap("n", "<Esc>fl", "<C-w>l", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "<Esc>ftn", ":tabnew<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Esc>ftt", ":tabnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Esc>ftp", ":tabprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Esc>fw", ":close<CR>", { noremap = true, silent = true })
+
 -- pane split commands
 vim.cmd("command! HS split")
 vim.cmd("command! VS vsplit")
 vim.cmd("command! CLS close")
-vim.api.nvim_set_keymap("n", "<Esc>fw", ":close<CR>", { noremap = true, silent = true })
 
 require("copilot.suggestion").toggle_auto_trigger()
 

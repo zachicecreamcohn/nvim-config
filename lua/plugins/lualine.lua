@@ -4,9 +4,9 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "nightfly",
-				section_separators = { "", "" },
-				component_separators = { "", "" },
+				theme = "horizon",
+				section_separators = { "[]", "[]" },
+				component_separators = { "[]", "[]" },
 			},
 			sections = {
 				lualine_a = { "mode" },
