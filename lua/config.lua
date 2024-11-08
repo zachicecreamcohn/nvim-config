@@ -1,5 +1,5 @@
 require("config.lazy")
-vim.cmd.colorscheme("tokyonight-night")
+
 -- Automatically change the current working directory to the file being edited
 vim.cmd([[autocmd BufEnter * silent! lcd %:p:h]])
 
@@ -20,7 +20,6 @@ vim.api.nvim_set_keymap("n", "<Esc>fh", "<C-w>h", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "<Esc>fj", "<C-w>j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Esc>fk", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Esc>fl", "<C-w>l", { noremap = true, silent = true })
-
 -- shortcuts to switch tabs
 vim.api.nvim_set_keymap("n", "<Esc>ftn", ":tabnew<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Esc>ftt", ":tabnext<CR>", { noremap = true, silent = true })
@@ -53,4 +52,5 @@ function _G.attach_tmux_session()
 	vim.cmd("terminal tmux attach-session -t my-session")
 end
 
-vim.api.nvim_set_keymap("n", "<leader>bl", ":lua attach_tmux_session()<CR>", { noremap = true, silent = true })
+-- add a command to the escape key so that it kills last find highlight
+vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", { noremap = true, silent = true })
