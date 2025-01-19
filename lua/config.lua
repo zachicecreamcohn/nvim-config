@@ -1,4 +1,8 @@
 require("config.lazy")
+require("config.neovide")
+
+-- define leader key
+vim.g.mapleader = " "
 
 -- Automatically change the current working directory to the file being edited
 vim.cmd([[autocmd BufEnter * silent! lcd %:p:h]])
@@ -16,24 +20,23 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
 -- shortcuts for switching between panes
-vim.api.nvim_set_keymap("n", "<Esc>fh", "<C-w>h", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>fj", "<C-w>j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>fk", "<C-w>k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>fl", "<C-w>l", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-l>", "<C-w>l", { noremap = true, silent = true })
+
 -- shortcuts to switch tabs
-vim.api.nvim_set_keymap("n", "<Esc>ftn", ":tabnew<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>ftt", ":tabnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>ftp", ":tabprevious<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>fw", ":close<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-t>", ":tabnew<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-]>", ":tabnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-[>", ":tabprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<D-w>", ":close<CR>", { noremap = true, silent = true })
 
 -- pane split commands
 vim.cmd("command! HS split")
 vim.cmd("command! VS vsplit")
 vim.cmd("command! CLS close")
 
-require("copilot.suggestion").toggle_auto_trigger()
-
--- Set a command for more easily leaving term mode (command-\)
+-- Set a command for more easily leaving term mode
 vim.keymap.set("t", "<Esc>t", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- Unmount any sshfs mounts when entering neovim

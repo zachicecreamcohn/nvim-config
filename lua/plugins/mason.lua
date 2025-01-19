@@ -23,6 +23,9 @@ return {
 			-- Set up the LSP servers you installed with Mason
 			lspconfig.lua_ls.setup({})
 			lspconfig.pyright.setup({})
+			-- ast-grep
+			lspconfig.ast_grep.setup({})
+			lspconfig.ts_ls.setup({})
 		end,
 	},
 }
