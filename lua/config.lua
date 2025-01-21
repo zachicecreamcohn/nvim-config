@@ -24,3 +24,4 @@ vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", { noremap = true, silent = tru
 
 -- set colorscheme to catppuccin-ma
 require("catppuccin").load("mocha")
+

@@ -1,7 +1,11 @@
 return {
 	"folke/snacks.nvim",
+	---@type snacks.Config
 	opts = {
 		picker = {},
+		lazygit = {
+			enable = true,
+		},
 	},
 	keys = {
 		{
@@ -213,7 +217,7 @@ return {
 			desc = "Colorschemes",
 		},
 		{
-			"<leader>qp",
+			"<leader>fp",
 			function()
 				Snacks.picker.projects()
 			end,
@@ -255,6 +259,14 @@ return {
 				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP Symbols",
+		},
+		-- Lazygit (<leader>lg)
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
 		},
 	},
 }
