@@ -17,4 +17,4 @@ vim.cmd("command! NvimConfig :cd ~/.config/nvim")
 -- add a command to the escape key so that it kills last find highlight
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", { noremap = true, silent = true })
 
-vim.cmd("colorscheme vague")
+vim.g.python3_host_prog = "/usr/bin/python3"
