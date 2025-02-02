@@ -7,11 +7,14 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip", -- Snippet engine (optional but common)
-			"saadparwaiz1/cmp_luasnip", -- Snippet completions
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
 			local cmp = require("cmp")
+
+			-- register custom EOS commmand source
+			cmp.register_source("eos", require("../custom_cmp_sources/EOS"))
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -38,6 +41,7 @@ return {
 					{ name = "buffer" },
 					{ name = "path" },
 					{ name = "luasnip" },
+					{ name = "eos" },
 				},
 			})
 		end,
