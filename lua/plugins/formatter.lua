@@ -3,7 +3,13 @@ return {
 	config = function()
 		-- Utilities for creating configurations
 		local util = require("formatter.util")
-
+		local function format_prettier()
+			return {
+				exe = "npx",
+				args = { "prettier", "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
+				stdin = true,
+			}
+		end
 		-- Formatter setup
 		require("formatter").setup({
 			logging = true,
@@ -30,6 +36,10 @@ return {
 						}
 					end,
 				},
+				typescript = { format_prettier },
+				javascript = { format_prettier },
+				typescriptreact = { format_prettier },
+
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
 				},

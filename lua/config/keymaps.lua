@@ -1,12 +1,6 @@
--- remap gd to allow jumping to definition in a new tab
-vim.api.nvim_set_keymap(
-	"n",
-	"gD",
-	":tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
--- shortcuts for switching between panes
+vim.api.nvim_set_keymap("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
+
+-- shortcuts for switching focus between panes
 vim.api.nvim_set_keymap("n", "<D-h>", "<C-w>h", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<D-j>", "<C-w>j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<D-k>", "<C-w>k", { noremap = true, silent = true })
@@ -28,3 +22,11 @@ vim.keymap.set("t", "<Esc>t", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- remap control-o to <leader>b (to go to previous buffer)
 vim.keymap.set("n", "<leader>b", "<C-6>", { noremap = true, silent = true })
+
+vim.keymap.set(
+	"n",
+	"<space>e",
+	":lua vim.diagnostic.open_float(0, {scope='line'})<CR>",
+	{ noremap = true, silent = true }
+)
+

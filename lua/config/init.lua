@@ -1,3 +1,11 @@
+-- set llvm path to hombrew version
+vim.fn.setenv("CC", "/opt/homebrew/opt/llvm/bin/clang")
+vim.fn.setenv("CXX", "/opt/homebrew/opt/llvm/bin/clang++")
+vim.fn.setenv("SDKROOT", vim.fn.systemlist("xcrun --show-sdk-path")[1])
+-- If needed for includes:
+vim.fn.setenv("CFLAGS", "-isysroot " .. vim.fn.getenv("SDKROOT"))
+vim.fn.setenv("CXXFLAGS", "-isysroot " .. vim.fn.getenv("SDKROOT"))
+
 vim.g.mapleader = " "
 
 -- Automatically change the current working directory to the file being edited
