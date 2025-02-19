@@ -28,6 +28,7 @@ return {
 				["<C-v>"] = "actions.select_vsplit",
 				["<C-h>"] = "actions.select_split",
 				["<C-t>"] = "actions.select_tab",
+				["<leader>p"] = "actions.preview",
 			},
 		})
 	end,
