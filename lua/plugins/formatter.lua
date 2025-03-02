@@ -39,6 +39,9 @@ return {
 				typescript = { format_prettier },
 				javascript = { format_prettier },
 				typescriptreact = { format_prettier },
+				python = {
+					require("formatter.filetypes.python").black,
+				},
 
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,

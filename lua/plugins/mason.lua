@@ -11,7 +11,7 @@ return {
 		dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright" }, -- Add your desired LSP servers here
+				ensure_installed = { "lua_ls", "pyright", "ts_ls", "ast_grep" }, -- Add your desired LSP servers here
 			})
 		end,
 	},
